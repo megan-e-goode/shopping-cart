@@ -1,6 +1,6 @@
 # shopping-cart
 Shopping cart project
-```shell
+```
 Write the code for a supermarket checkout that can calculate the price of any
 number of items taken from a predetermined list. Each item should be priced
 individually, and the checkout should be able to scan them in any order.
