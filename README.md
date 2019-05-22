@@ -1,5 +1,5 @@
 # shopping-cart
-Shopping cart project
+Shopping cart project - Complete with feature test.
 ```
 Write the code for a supermarket checkout that can calculate the price of any
 number of items taken from a predetermined list. Each item should be priced
