@@ -17,4 +17,12 @@ class ShoppingCart
     raise "Item is out of stock" unless @items.available?(scanned_item[0])
     @checkout.push(scanned_item[0])
   end
+
+  def checkout_total
+    total = 0
+    @checkout.each do |item|
+      total += item[:price]
+    end
+    total
+  end
 end
