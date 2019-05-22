@@ -14,6 +14,7 @@ class ShoppingCart
   end
 
   def add_to_checkout(scanned_item)
-    @checkout.push(scanned_item[0]) if @items.available?(scanned_item[0])
+    raise "Item is out of stock" unless @items.available?(scanned_item[0])
+    @checkout.push(scanned_item[0])
   end
 end
