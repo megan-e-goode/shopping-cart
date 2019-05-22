@@ -3,7 +3,6 @@ require 'items'
 describe Items do
   it 'initilizes items list' do
     items = Items.new
-    expect(items.stock).to be_an_instance_of(Array)
     expect(items.stock).to eq([
       { item: "Bread", price: 0.90, available: 5 },
       { item: "Butter", price: 1.90, available: 5 },
