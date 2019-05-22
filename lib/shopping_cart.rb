@@ -1,7 +1,7 @@
 require './lib/items.rb'
 
 class ShoppingCart
-  attr_reader :checkout, :items
+  attr_reader :checkout, :items, :total
 
   def initialize(items=Items.new)
     @checkout = []
@@ -23,7 +23,13 @@ class ShoppingCart
     @checkout.each do |item|
       total += item[:price]
     end
-    puts "Total: £#{total}"
-    total
+    puts "Total: £#{'%.2f' % total}"
+    @total = total
+  end
+
+  def transaction(payment)
+    change = payment - @total
+    puts "Paid with £#{'%.2f' % payment}, Change: £#{'%.2f' % change}"
+    ('%.2f' % change).to_f
   end
 end
