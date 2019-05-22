@@ -1,13 +1,15 @@
-class Shopping_cart
-  attr_reader :checkout, :stock
+require './lib/items.rb'
 
-  def initialize(stock)
+class ShoppingCart
+  attr_reader :checkout, :items
+
+  def initialize(items=Items.new)
     @checkout = []
-    @stock = stock
+    @items = items
   end
 
   def scan(item)
-    scanned_item = @stock.select { |product| product[:item] == item }
-    @checkout.push(scanned_item)
+    scanned_item = @items.stock.select { |product| product[:item] == item }
+    @checkout.push(scanned_item) if @items.available?(scanned_item)
   end
 end

@@ -1,7 +1,8 @@
-require './lib/items'
+require './lib/shopping_cart'
 
-items = Items.new
+cart = ShoppingCart.new
 
-items.add_to_cart("Bread")
+cart.scan("Bread")
+puts cart.checkout
 
-items.stock.select { |item| item[:item] == "Bread" }
+ cart.items.view
