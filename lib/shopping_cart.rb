@@ -23,6 +23,7 @@ class ShoppingCart
     @checkout.each do |item|
       total += item[:price]
     end
+    puts "Total: £#{total}"
     total
   end
 end
