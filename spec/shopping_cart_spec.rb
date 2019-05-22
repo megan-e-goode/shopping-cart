@@ -1,8 +1,8 @@
 require './lib/shopping_cart.rb'
 
-describe 'Shopping_cart' do
-  context ',when adding to basket,' do
-    let(:items) { double(:items, :stock => [
+describe ShoppingCart do
+  context 'when adding to basket' do
+    let(:items) { double(:items, :available? => true, :stock => [
       { item: "Bread", price: 0.90, available: true },
       { item: "Butter", price: 1.90, available: true },
       { item: "Milk", price: 0.90, available: true },
@@ -16,7 +16,7 @@ describe 'Shopping_cart' do
       ]) }
     let(:cart) { ShoppingCart.new(items)}
 
-    it 'responds the method add' do
+    it 'responds the method scan' do
       expect(cart).to respond_to(:scan)
     end
 
