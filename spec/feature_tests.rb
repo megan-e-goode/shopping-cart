@@ -1,4 +1,7 @@
 require './lib/items'
 
 items = Items.new
-puts items.stock
+
+items.add_to_cart("Bread")
+
+items.stock.select { |item| item[:item] == "Bread" }
